@@ -15,8 +15,19 @@
 
 		// Demonstration Data
 		this.chatLog = [
-			{ message: "Hello" }, { message: "Hola" }, { message: "Konnichiwa" }
+			// { message: "Hello" }, { message: "Hola" }, { message: "Konnichiwa" }
 		];
+
+		// Here - need to fetch data from the database
+		// In here, I'll set chatLog to the db data
+		messagesRef.on('value', function(snapshot) {
+			var data = snapshot.val();
+			that.chatLog = [];
+			for (key in data) {
+				that.chatLog.push(data[key]);
+			}
+			that.update();
+		});
 
 		sendMsg(e) {
 			if (e.type == "keypress" && e.key !== "Enter") {

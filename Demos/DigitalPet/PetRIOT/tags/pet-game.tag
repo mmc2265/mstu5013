@@ -119,8 +119,8 @@
 				this.percentHealth = this.petHealth;
 			}
 
-			if (this.petStrength < 0) {
-				this.percentStrength = 0;
+			if (this.petStrength <= 0) {
+				this.petStrength = 0;
 			} else if (this.petStrength > CATSTRENGTH) {
 				this.percentStrength = 100;
 			} else {

@@ -1,5 +1,5 @@
 <app>
-	<h1>TEST APP QUIZ</h1>
+	<h1>Which number is bigger?</h1>
 
 	<question each={ quizItem in quizQuestions }></question>
 
@@ -9,31 +9,27 @@
 
 	<script>
 		var that = this;
-		console.log('app.tag');
 
 		this.quizQuestions = [
 			{
 				id: "abc123",
-				question: "What's bigger, the earth or the sun?",
+				question: "What's bigger?",
 				choices: [
-					"earth",
-					"sun",
-					"both the same",
-					"jupiter"
+					"1.png",
+					"2.png",
+					"3.png",
 				],
-				youtubeID: "Ydfsifdls",
-				answer: "sun"
+				answer: "3.png"
 			},
 			{
 				id: "def456",
-				question: "Do you believe in God?",
+				question: "What's bigger?",
 				choices: [
-					"yes",
-					"no",
-					"kind of..."
+					"4.png",
+					"5.png",
+					"6.png"
 				],
-				youtubeID: "ABDE3482",
-				answer: "kind of..."
+				answer: "6.png"
 			}
 		];
 

@@ -2,7 +2,7 @@
 
 	<p>{ quizItem.question }</p>
 	<label each={ choice in quizItem.choices }>
-		<input type="radio" name={ quizItem.id } value={ quizItem.answer } onclick={ setAnswer }></input> { choice }
+		<input type="radio" name={ quizItem.id } value={ quizItem.answer } onclick={ setAnswer }></input> <img src= {"./Numbers/" + choice}>
 	</label>
 
 
