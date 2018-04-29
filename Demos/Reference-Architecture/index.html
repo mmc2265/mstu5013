@@ -7,15 +7,20 @@
 	<title>Document</title>
 </head>
 <body>
+	<!-- Riot Mount Point -->
 	<app></app>
 
+	<!-- Riot TAGS -->
 	<script src="tags/app.tag" type="riot/tag"></script>
-	<script src="tags/custom-tooltip.tag" type="riot/tag"></script>
+	<script src="tags/story.tag" type="riot/tag"></script>
+	<script src="tags/reader.tag" type="riot/tag"></script>
+	<script src="tags/scene-editor.tag" type="riot/tag"></script>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.8.1/riot+compiler.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
+	<!-- Riot + Firebase IMPORT -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.9.4/riot+compiler.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+
 	<script>
 	  // Initialize Firebase
 	  var config = {
@@ -28,12 +33,14 @@
 	  };
 	  firebase.initializeApp(config);
 
+		// Firebase Cached References
 		var database = firebase.database();
 		var rootRef = database.ref('/');
-		var scoresRef = rootRef.child('scores');
-	</script>
+		var storiesRef = rootRef.child('stories');
 
-	<script>
+		var observable = riot.observable();
+
+		// Initialize RiotJS
 		riot.mount('*');
 	</script>
 </body>
